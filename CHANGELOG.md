@@ -4,6 +4,14 @@ All notable changes to HyperSwitch will be documented here.
 
 - - -
 
+## 2024.04.19.0
+
+### Documentation
+
+- **try_local_system.md:** Update documentation for configuring WSL environment to account for possible memory issues.
+
+- - -
+
 ## 2024.04.18.0
 
 ### Features
