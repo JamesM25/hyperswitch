@@ -241,7 +241,9 @@ packages for your distribution and follow along.
    The following steps assume that you are running the commands within the WSL
    shell environment.
 
-2. Install the stable Rust toolchain using `rustup`:
+   > Note that you may need to increase the amount of memory that WSL can use, either through the `.wslconfig` file in your user directory, or by creating a swap file in WSL itself. `cargo build` may fail to build the `router` crate if WSL has less than 24GB of memory available, but your mileage may vary.
+
+3. Install the stable Rust toolchain using `rustup`:
 
    ```shell
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -261,7 +263,7 @@ packages for your distribution and follow along.
    We only suggest running this script as there seems to be no `rustup` package
    available in the Ubuntu package repository._
 
-3. Install PostgreSQL and start the `postgresql` service:
+4. Install PostgreSQL and start the `postgresql` service:
 
    ```shell
    sudo apt update
@@ -276,7 +278,7 @@ packages for your distribution and follow along.
    [PostgreSQL documentation website][postgresql-install] to set up PostgreSQL
    on your system.
 
-4. Install Redis and start the `redis-server` service:
+5. Install Redis and start the `redis-server` service:
 
    ```shell
    sudo apt install redis-server
@@ -289,19 +291,19 @@ packages for your distribution and follow along.
    installation instructions on the [Redis website][redis-install] to set up
    Redis on your system.
 
-5. Make sure your system has the packages necessary for compiling Rust code:
+6. Make sure your system has the packages necessary for compiling Rust code:
 
    ```shell
    sudo apt install build-essential
    ```
 
-6. Install `diesel_cli` using `cargo`:
+7. Install `diesel_cli` using `cargo`:
 
    ```shell
    cargo install diesel_cli --no-default-features --features postgres
    ```
 
-7. Make sure your system has the `pkg-config` package and OpenSSL installed:
+8. Make sure your system has the `pkg-config` package and OpenSSL installed:
 
    ```shell
    sudo apt install pkg-config libssl-dev
